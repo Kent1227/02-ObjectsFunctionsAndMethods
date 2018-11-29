@@ -25,7 +25,12 @@ def main():
     #draw_circles(rg.Point(-200, 0))
     #better_draw_circles(rg.Point(100, 50), 3)
     #better_draw_circles(rg.Point(-200, 0), 10)
-    even_better_draw_circles(rg.Point(200, 50), 30, 4, 'blue', 5)
+    #even_better_draw_circles(rg.Point(200, 50), 30, 10, 'red', 3)
+    even_better_draw_circles(rg.Point(-200, 200), 15, 20, 'red', 8)
+    even_better_draw_circles(rg.Point(-200, -200), 15, 20, 'blue', 8)
+    even_better_draw_circles(rg.Point(200, 200), 15, 20, 'green', 8)
+    even_better_draw_circles(rg.Point(200, -200), 15, 20, 'yellow', 8)
+    even_better_draw_circles(rg.Point(0, 0), 15, 20, 'orange', 8)
 
     window.update()
     window.close_on_mouse_click()
@@ -149,7 +154,7 @@ def better_draw_circles(point, rad_diff):
 
 
 ###############################################################################
-# TODO: 4a.
+# DONE: 4a.
 #   In the previous _TODO_, you made a MORE POWERFUL version
 #   of   draw_circles   by introducing a new PARAMETER for the amount
 #   by which the radii of the concentric circles increase.
@@ -171,7 +176,7 @@ def better_draw_circles(point, rad_diff):
 #   to the body of the   even_better_draw_circles   function defined below.
 #   Then add parameters and modify the code to make them work!
 #
-# TODO: 4b.
+# DONE: 4b.
 #   In   main  at the place indicated, comment-out the existing calls
 #   to  better_draw_circles  and add at least two calls to the improved
 #   even_better_draw_circles  function, to TEST that your modified code is

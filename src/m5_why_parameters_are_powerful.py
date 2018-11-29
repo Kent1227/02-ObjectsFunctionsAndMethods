@@ -23,15 +23,16 @@ def main():
     # -------------------------------------------------------------------------
     #draw_circles(rg.Point(100, 50))
     #draw_circles(rg.Point(-200, 0))
-    better_draw_circles(rg.Point(100, 50), 3)
-    better_draw_circles(rg.Point(-200, 0), 10)
+    #better_draw_circles(rg.Point(100, 50), 3)
+    #better_draw_circles(rg.Point(-200, 0), 10)
+    even_better_draw_circles(rg.Point(200, 50), 30, 4, 'blue', 5)
 
     window.update()
     window.close_on_mouse_click()
 
 
 ###############################################################################
-# TODO: 2.
+# DONE: 2.
 #   First, RUN this program.  You will see that it draws concentric circles
 #   whose radii vary by 15.
 #
@@ -178,9 +179,26 @@ def better_draw_circles(point, rad_diff):
 #
 ###############################################################################
 
-def even_better_draw_circles(point):
+def even_better_draw_circles(point, rad_diff, num, color, thickness):
     """ An improved version of draw_circles, per the _TODO_ above. """
     # READ the above _TODO_ and then copy-paste code from better_circles here:
+    turtle = rg.SimpleTurtle()
+    turtle.pen = rg.Pen(color, thickness)
+    turtle.pen_up()
+    turtle.go_to(point)
+    turtle.set_heading(0)  # Point "east" (towards the right)
+
+    for k in range(num):  # k becomes 1, 2, 3, ... 10
+
+        turtle.pen_up()
+
+        # Go DOWN 15 pixels, ending up pointing east again
+        turtle.right(90)
+        turtle.forward(rad_diff)
+        turtle.left(90)
+
+        turtle.pen_down()
+        turtle.draw_circle(rad_diff * k)  # Radius 15, 30, 45, 60, ...
 
 
 ###############################################################################
